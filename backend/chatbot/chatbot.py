@@ -122,7 +122,8 @@ def get_query_response(file_path, query, session_id):
 
 # Check if the document is already processed
 def is_document_processed(document_id):
-    return os.path.exists(os.path.join(document_id, document_id))
+    """Return True if the document has already been processed."""
+    return os.path.exists(os.path.join(persist_directory, document_id))
 
 
 # Run the program
